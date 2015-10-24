@@ -1,0 +1,27 @@
+[ 	
+	{
+		"name": "Facebook",
+		"url": "https://www.facebook.com/pages/Byte-Us-Gaming/798650310170382",
+		"imgCode": "fa-facebook-square",
+		"css": "facebook"
+	},
+	{
+		"name": "Twitter",
+		"url": "https://www.twitter.com/ByteUsGaming",
+		"imgCode": "fa-twitter",
+		"css": "twitter"
+	},
+	{
+		"name": "Youtube",
+		"url": "https://www.youtube.com/channel/UCL7uJ0vdgPAUnlQbdmZoFyg",
+		"imgCode": "fa-youtube",
+		"css": "youtube"
+	},
+	{
+		"name": "Google Plus",
+		"url": "https://plus.google.com/u/1/101888460980483296132",
+		"imgCode": "fa-google-plus",
+		"css": "googleplus"
+	}
+
+]

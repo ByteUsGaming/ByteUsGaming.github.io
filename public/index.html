@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="ByteMe">
+
+<head>
+    <!--Header Data-->
+    <meta charset="utf-8">
+    <!--Website Title-->
+    <title>Welcome to ByteUsGaming</title>
+    <!--Linking scripts, fonts, and css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.min.js"></script>
+    <script src="scripts/socket.io.js"></script>
+    <script src="scripts/typed.js"></script>
+    <script src="scripts/script.js"></script>
+</head>
+
+<body>
+    <!-- Header Menu -->
+    <div ng-controller="MenuController" id="HeaderMenu" class="center-block">
+        <ul class="list-inline">
+            <li ng-repeat="link in links"><a target="_self" ng-click="menuItemClicked(link)">{{link.name}}</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <ui-view></ui-view>         
+   
+
+    <!-- Social Media Footer -->
+    <ul ng-controller="SocialMediaCtrl" id="SocialMedia" class="list-inline container-fluid">
+        <li ng-repeat="media in medias" class="mediaBlock {{media.css}}" ng-click="linkClicked(media.url)">
+            <div>
+                <i class="fa fa-2x {{media.imgCode}}"></i>
+            </div>
+            <span>{{media.name}}</span>
+        </li>
+    </ul>
+    <!-- Copyright -->
+    <div style="font-size: 20px;" class="center-block">&copy; Byte Us Gaming, 2014-2015.</div>
+</body>
+
+</html>
