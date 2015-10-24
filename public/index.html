@@ -21,17 +21,22 @@
 </head>
 
 <body>
+    <!-- Main content -->
+    <intro-panel></intro-panel>
     <!-- Header Menu -->
-    <div ng-controller="MenuController" id="HeaderMenu" class="center-block">
+    <div ng-controller="MenuController" id="HeaderMenu" class="center-block" stick-when-at-top="header-menu-scroll">
         <ul class="list-inline">
-            <li ng-repeat="link in links"><a target="_self" ng-click="menuItemClicked(link)">{{link.name}}</a></li>
+            <li ng-repeat="link in links"><a target="_self" ng-href="{{link.url}}">{{link.name}}</a></li>
         </ul>
     </div>
-
-    <!-- Main content -->
-    <ui-view></ui-view>         
-   
-
+    <!-- Team Page -->
+    <team-panel></team-panel>
+    <!-- Games Page -->
+    <games-panel></games-panel>
+    <!-- Store Page -->
+    <store-panel></store-panel>
+    <!-- Contact Page -->
+    <contact-panel></contact-panel>
     <!-- Social Media Footer -->
     <ul ng-controller="SocialMediaCtrl" id="SocialMedia" class="list-inline container-fluid">
         <li ng-repeat="media in medias" class="mediaBlock {{media.css}}" ng-click="linkClicked(media.url)">

@@ -1,15 +1,18 @@
+<div class="contact-background-img">
+    <div></div>
+</div>
 <div class="content" id="contact">
-	<h6 class="center-block">Contact</h6>
-	<div class="row">
-		<div class="col-md-6 col-sm-6">
-			
-		</div>
-		<div class="col-md-6 col-sm-6">
-			<form ng-sumbit="sendFeedback()">
-				<div class="form-group">
-					<input type="text" class="form-control text-center input-lg" placeholder="Enter your name">
-				</div>
-			</form>
-		</div>
-	</div>
+    <h6 class="center-block">Contact</h6>
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <form ng-sumbit="sendFeedback()">
+                <div class="input-group-lg">
+                    <input type="text" ng-model="name" class="form-control text-center input-lg" placeholder="Enter your name" required> <br>
+                    <input type="email" ng-model="email" class="form-control text-center input-lg" placeholder="Enter your email"> <br>
+                    <textarea rows="10" ng-model="feedback" class="text-center input-lg" placeholder="Give us feedback!" required></textarea>
+                </div> <br>
+                <button type="submit" class=" center-block btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>

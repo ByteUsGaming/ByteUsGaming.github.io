@@ -25,11 +25,8 @@ a:link {
 
 #HeaderMenu {
     padding: 10px;
-    position: relative;
-    width: 100%;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 5;
 }
 
 #HeaderMenu li {
@@ -58,6 +55,14 @@ a:link {
     width: 100%;
     background: #8A0808;
 }
+
+.header-menu-scroll {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.6) !important;
+    z-index: 99 !important;
+}
 .list-inline {
     color: #5B6073;
 }
@@ -73,11 +78,6 @@ a:link {
     transition: all 1.0s ease;
 }
 
-#intro {
-    position: relative;
-    height: 100%;
-    z-index: 2;
-}
 .intro-background-img {
     position: absolute;
     background: url(../img/workplace.jpg) no-repeat center center fixed;
@@ -109,7 +109,35 @@ a:link {
     -webkit-transition: all 1.0s ease;
     transition: all 1.0s ease;
 }
-
+.content {
+    position: relative;
+    height: 100%;
+    z-index: 90;
+    margin-top: 5px;
+}
+.contact-background-img {
+    position: absolute;
+    background: url(../img/form.jpg) no-repeat center center fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: 1;
+    -webkit-filter: blur(6px);
+}
+.contact-background-img>div {
+    height: 100%;
+    background: rgba(127,127,127,0.6);
+    overflow: hidden;
+    z-index: 2;
+}
+textarea {
+    resize: none;
+    height: auto;
+    width: 100%;
+}
+.btn.btn-primary {
+    color: white !important;
+}
 #FooterMenu {
     position: relative;
     margin-top: 30px;
@@ -178,18 +206,14 @@ a:link {
     color: #5B6073;
 }
 
-#team {
-    height: inherit;
-}
-
 #team>h6,
 #games>h6,
 #contact>h6,
 #store>h6 {
     font-size: 80px;
     color: white;
-    background: rgba(0, 0, 0, 0);
     font-style: italic;
+    text-shadow: 2px 2px 9px black;
 }
 
 .row-people {}
@@ -255,12 +279,6 @@ a:link {
     border: 1px solid #5B6073;
     ;
 }
-
-.content {
-    height: 90%;
-}
-
-
 
 .typing {
     color: #B40404;
