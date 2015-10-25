@@ -1,8 +1,8 @@
 <div class="content" id="team">
     <h6 class="center-block">Team</h6>
     <div class="row row-people">
-        <div ng-repeat="person in people" ng-click="changeSummary(person.urlName)" class="person col-sm-4 col-md-2 center-block">
-            <img ng-class="{personactive: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false" class="img-thumbnail img-responsive" ng-src="../img/{{person.imgURL}}" alt="{{person.name}}">
+        <div ng-repeat="person in people" ng-click="changeSummary(person.urlName)" class="person col-sm-4 col-md-2 text-center">
+            <img ng-class="{personactive: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false" class="img-thumbnail" ng-src="../img/{{person.imgURL}}" alt="{{person.name}}">
             <div class="caption">
                 <p class="center-block">{{person.name}}</p>
             </div>

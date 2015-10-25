@@ -11,6 +11,7 @@ body {
 
 * {
     box-sizing: border-box;
+    /*border: 1px solid red;*/
 }
 
 a,
@@ -60,9 +61,10 @@ a:link {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255,255,255,0.6) !important;
+    background: rgba(255, 255, 255, 0.6) !important;
     z-index: 99 !important;
 }
+
 .list-inline {
     color: #5B6073;
 }
@@ -71,11 +73,19 @@ a:link {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 #logo {
     margin-bottom: 0;
     opacity: 0.0;
     -webkit-transition: all 1.0s ease;
     transition: all 1.0s ease;
+}
+
+.content {
+    position: relative;
+    height: 100%;
+    z-index: 90;
+    margin-top: 5px;
 }
 
 .intro-background-img {
@@ -85,13 +95,14 @@ a:link {
     height: 100%;
     background-size: cover;
     z-index: 1;
-    -webkit-filter: blur(3px);
+    -webkit-filter: blur(8px);
 }
+
 #intro>div,
 #logo {
     text-shadow: 2px 2px 6px black;
     position: relative;
-    top: 40%;
+    top: 30%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -109,114 +120,17 @@ a:link {
     -webkit-transition: all 1.0s ease;
     transition: all 1.0s ease;
 }
-.content {
-    position: relative;
-    height: 100%;
-    z-index: 90;
-    margin-top: 5px;
-}
-.contact-background-img {
-    position: absolute;
-    background: url(../img/form.jpg) no-repeat center center fixed;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    z-index: 1;
-    -webkit-filter: blur(6px);
-}
-.contact-background-img>div {
-    height: 100%;
-    background: rgba(127,127,127,0.6);
-    overflow: hidden;
-    z-index: 2;
-}
-textarea {
-    resize: none;
-    height: auto;
-    width: 100%;
-}
-.btn.btn-primary {
-    color: white !important;
-}
-#FooterMenu {
-    position: relative;
-    margin-top: 30px;
-}
 
-#FooterMenu li:hover {
-    color: white;
-}
-
-.center-block {
-    text-align: center;
-}
-
-.mediaBlock {
-    text-align: center;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.mediaBlock:hover {
-    color: white;
-}
-
-.mediaBlock:hover>.img-responsive {
-    opacity: 1.0;
-}
-
-.img-responsive.center-block {
-    margin-bottom: 10%;
-}
-
-.mediaBlock>.img-responsive {
-    opacity: 0.5;
-}
-
-#SocialMedia {
-    background: black;
-    font-size: 18px;
-    text-align: center;
-}
-
-#SocialMedia li {
-    width: 15%;
-}
-
-.facebook:hover {
-    background-color: #2E64FE;
-}
-
-.twitter:hover {
-    background-color: #00BFFF;
-}
-
-.youtube:hover {
-    background-color: red;
-}
-
-.googleplus:hover {
-    background-color: #FF8000;
-}
-
-.center-block.center-block {
-    color: #5B6073;
-}
-
-#team>h6,
-#games>h6,
-#contact>h6,
-#store>h6 {
+h6 {
     font-size: 80px;
-    color: white;
+    color: white !important;
     font-style: italic;
     text-shadow: 2px 2px 9px black;
 }
 
-.row-people {}
+.row {
+    width: 100%;
+}
 
 .row-people>div {
     padding-top: 20px;
@@ -256,28 +170,132 @@ textarea {
 }
 
 .person>img {
-    height: 250px;
-    width: 250px;
+    height: 225px;
+    width: 225px;
 }
 
-.team-left {
-    width: 50%;
+#games {
+    background: white;
 }
 
-.linkButton {
-    border: 1px solid white;
+.contact-background-img {
+    position: absolute;
+    background: url(../img/form.jpg) no-repeat center center fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: 1;
+    -webkit-filter: blur(6px);
+}
+
+.contact-background-img>div {
+    height: 100%;
+    background: rgba(127, 127, 127, 0.6);
+    overflow: hidden;
+    z-index: 2;
+}
+
+textarea {
+    resize: none;
+    height: auto;
+    width: 100%;
+}
+
+.btn.btn-primary {
+    color: white !important;
+}
+
+#FooterMenu {
+    background-color: #2B2B2B;
+    margin-top: -10px;
+    color: #5B6073;
+    font-size: 1vw !important;
+}
+
+#FooterMenu > * {
+    margin-top: -10px;
+    position: relative;
+}
+
+#FooterMenu li {
+    padding-left: 30px;
+}
+
+#FooterMenu li:hover {
     color: white;
-    padding: 15px;
-    font-size: 20px;
-    margin: 20px;
+}
+
+.footer-links {
+    padding-top: 25px;
+}
+
+.copy {
+    padding-top: 25px;
+}
+
+.img-small {
+    height: 76px;
+    width: 76px;
+}
+
+.center-block {
+    text-align: center;
+}
+
+.mediaBlock {
+    text-align: center;
+    cursor: pointer;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.linkButton:hover {
-    background-color: #5B6073;
-    border: 1px solid #5B6073;
-    ;
+.mediaBlock:hover {
+    color: white;
+}
+
+.mediaBlock:hover>.img-responsive {
+    opacity: 1.0;
+}
+
+.img-responsive.center-block {
+    margin-bottom: 10%;
+}
+
+.mediaBlock>.img-responsive {
+    opacity: 0.5;
+}
+
+#SocialMedia {
+    background: black;
+    font-size: 18px;
+    text-align: center;
+    margin-top: -6px;
+}
+
+#SocialMedia li {
+    width: 15%;
+}
+
+.facebook:hover {
+    background-color: #2E64FE;
+}
+
+.twitter:hover {
+    background-color: #00BFFF;
+}
+
+.youtube:hover {
+    background-color: red;
+}
+
+.googleplus:hover {
+    background-color: #FF8000;
+}
+
+.center-block.center-block {
+    color: #5B6073;
 }
 
 .typing {

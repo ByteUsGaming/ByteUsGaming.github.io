@@ -26,7 +26,7 @@
     <!-- Header Menu -->
     <div ng-controller="MenuController" id="HeaderMenu" class="center-block" stick-when-at-top="header-menu-scroll">
         <ul class="list-inline">
-            <li ng-repeat="link in links"><a target="_self" ng-href="{{link.url}}">{{link.name}}</a></li>
+            <li ng-repeat="link in links"><a target="_self" href="{{link.url}}">{{link.name}}</a></li>
         </ul>
     </div>
     <!-- Team Page -->
@@ -47,7 +47,21 @@
         </li>
     </ul>
     <!-- Copyright -->
-    <div style="font-size: 20px;" class="center-block">&copy; Byte Us Gaming, 2014-2015.</div>
+    <div ng-controller="MenuController" id="FooterMenu" class="text-center">
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-3">
+                <ul class="list-inline footer-links">
+                    <li ng-repeat="link in links"><a target="_self" href="{{link.url}}">{{link.name}}</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-small" src="./img/BUG_controller.png" alt="">
+            </div>
+            <div class="col-sm-2">
+                <div class="copy">&copy; Byte Us Gaming, 2014-2015.</div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

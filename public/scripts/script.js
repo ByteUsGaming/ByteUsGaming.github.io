@@ -230,7 +230,7 @@ app.service('Pages', function() {
         name: 'Store',
         url: '#store'
     }, {
-        name: 'Contact Us',
+        name: 'Contact',
         url: '#contact'
     }];
 
