@@ -48,6 +48,8 @@ module.exports = function(grunt) {
       src:[
           './**/*.js',
           './public/*.html',
+          './public/**/*.html',
+          './public/**/**/*.html',
           './**/css/*.css',
           './*.js'
         ]
@@ -78,6 +80,8 @@ module.exports = function(grunt) {
         files:[
           './**/*.js',
           './public/*.html',
+          './public/**/*.html',
+          './public/**/**/*.html',
           './**/css/*.css',
           './*.js'
         ]

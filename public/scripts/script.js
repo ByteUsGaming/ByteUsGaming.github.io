@@ -4,7 +4,7 @@ app.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
 
-        $stateProvider
+        //$stateProvider
         // .state('home', {
         //     url: '/',
         //     templateUrl: '../pages/intro.html',
@@ -32,42 +32,42 @@ app.config(['$stateProvider', '$urlRouterProvider',
         //     url: '/team',
         //     templateUrl: '../pages/team.html'
         // })
-            .state('carl', {
-                url: '/carl',
-                templateUrl: '../pages/people/carl.html'
-            })
-            .state('evan', {
-                url: '/evan',
-                templateUrl: '../pages/people/evan.html'
-            })
-            .state('kevin', {
-                url: '/kevin',
-                templateUrl: '../pages/people/kevin.html'
-            })
-            .state('sarah', {
-                url: '/sarah',
-                templateUrl: '../pages/people/sarah.html'
-            })
-            .state('spencer', {
-                url: '/spencer',
-                templateUrl: '../pages/people/spencer.html'
-            })
-            .state('tabitha', {
-                url: '/tabitha',
-                templateUrl: '../pages/people/tabitha.html'
-            })
-            // .state('games', {
-            //     url: '/games',
-            //     templateUrl: '../pages/games.html'
-            // })
-            // .state('store', {
-            //     url: '/store',
-            //     templateUrl: '../pages/store.html'
-            // })
-            // .state('contact', {
-            //     url: '/contactus',
-            //     templateUrl: '../pages/contact.html',
-            //     controller : function($http, $scope) {
+        // .state('carl', {
+        //     url: '/carl',
+        //     templateUrl: '../pages/people/carl.html'
+        // })
+        // .state('evan', {
+        //     url: '/evan',
+        //     templateUrl: '../pages/people/evan.html'
+        // })
+        // .state('kevin', {
+        //     url: '/kevin',
+        //     templateUrl: '../pages/people/kevin.html'
+        // })
+        // .state('sarah', {
+        //     url: '/sarah',
+        //     templateUrl: '../pages/people/sarah.html'
+        // })
+        // .state('spencer', {
+        //     url: '/spencer',
+        //     templateUrl: '../pages/people/spencer.html'
+        // })
+        // .state('tabitha', {
+        //     url: '/tabitha',
+        //     templateUrl: '../pages/people/tabitha.html'
+        // })
+        // .state('games', {
+        //     url: '/games',
+        //     templateUrl: '../pages/games.html'
+        // })
+        // .state('store', {
+        //     url: '/store',
+        //     templateUrl: '../pages/store.html'
+        // })
+        // .state('contact', {
+        //     url: '/contactus',
+        //     templateUrl: '../pages/contact.html',
+        //     controller : function($http, $scope) {
 
         //     }
         // });
@@ -77,27 +77,44 @@ app.config(['$stateProvider', '$urlRouterProvider',
 app.service('People', function() {
     this.people = [{
         name: 'Carl Amko',
-        urlName: 'carl',
+        linkedInUrl: 'https://www.linkedin.com/in/carlamko',
+        facebookUrl: 'https://www.facebook.com/itsdefnotcarl',
+        jobDesc: ['Lead Programmer', 'Web Developer'],
         imgURL: "carl.png"
     }, {
         name: 'Evan Clendenning',
         urlName: 'evan',
+        linkedInUrl: '',
+        facebookUrl: 'https://www.facebook.com/MuffinofChaos',
+        jobDesc: ['Lead Programmer', 'Audio Engineer'],
         imgURL: "evan.png"
     }, {
         name: 'Kevin Portuondo',
         urlName: 'kevin',
+        linkedInUrl: 'https://www.linkedin.com/pub/kevin-portuondo/30/aaa/396',
+        facebookUrl: 'https://www.facebook.com/keport926',
+        jobDesc: ['Creative Director', 'Public Relations Specialist'],
         imgURL: "kevin.png"
     }, {
         name: 'Sarah McLean',
         urlName: 'sarah',
+        linkedInUrl: '',
+        facebookUrl: 'https://www.facebook.com/sarah.mclean.169',
+        jobDesc: ['Lead Writer', 'Content Designer'],
         imgURL: "sarah.png"
     }, {
         name: 'Spencer Maschin',
         urlName: 'spencer',
+        linkedInUrl: '',
+        facebookUrl: 'https://www.facebook.com/spencer.maschin.7',
+        jobDesc: ['Concept Artist', 'Quality Assurance Analyst'],
         imgURL: "spencer.png"
     }, {
         name: 'Tabitha Kitchen',
         urlName: 'tabitha',
+        linkedInUrl: '',
+        facebookUrl: 'https://www.facebook.com/Tabitha.Amber',
+        jobDesc: ['Chief Editor', 'Quality Assurance Analyst'],
         imgURL: "tabitha.png"
     }];
 
@@ -141,11 +158,11 @@ app.directive('teamPanel', [function() {
     // Runs during compile
     return {
         // name: '',
-        controller: function($scope, People, $location) {
+        controller: function($scope, People, $window) {
             $scope.people = People.people;
 
-            $scope.changeSummary = function(newPerson) {
-                $location.url(newPerson);
+            $scope.windowOpen = function(url) {
+                $window.open(url);
             };
         },
         restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment

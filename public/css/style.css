@@ -3,8 +3,9 @@ html {
 }
 
 body {
-    background: url(../img/black_pattern02.jpg) no-repeat center center fixed;
-    background-size: cover;
+    /*background: url(../img/black_pattern02.jpg) no-repeat center center fixed;
+    background-size: cover;*/
+    background-color: #2B2B2B;
     height: 100%;
     font-family: 'Open Sans', Sans-serif;
 }
@@ -83,7 +84,7 @@ a:link {
 
 .content {
     position: relative;
-    height: 100%;
+    /* height: 100%;*/
     z-index: 90;
     margin-top: 5px;
 }
@@ -98,14 +99,17 @@ a:link {
     -webkit-filter: blur(8px);
 }
 
-#intro>div,
-#logo {
+#intro>* {
     text-shadow: 2px 2px 6px black;
     position: relative;
     top: 30%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+#intro {
+    height: 100%;
 }
 
 #intro>.center-block {
@@ -122,33 +126,30 @@ a:link {
 }
 
 h6 {
+    font-family: 'Share Tech Mono';
     font-size: 80px;
     color: white !important;
-    font-style: italic;
     text-shadow: 2px 2px 9px black;
+    margin-top: 30px;
 }
 
-.row {
+.content>h6:after {
+    content: '';
+    display: block;
+    color: white;
     width: 100%;
+    height: 5px;
+    margin: auto;
+    background: transparent;
 }
 
-.row-people>div {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    -webkit-transition: all 0.7s ease;
-    transition: all 0.7s ease;
-}
-
-.row-people>div>img {
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+.img-rounded {
+    border: 2px solid white;
 }
 
 .personactive {
-    border: 1.5px solid yellow;
-    -webkit-transform: scale(1.08);
-    -ms-transform: scale(1.08);
-    transform: scale(1.08);
+    background: rgba(138, 8, 8, 0.6);
+    opacity: 1 !important;
 }
 
 .caption>p.center-block {
@@ -157,32 +158,93 @@ h6 {
     padding-top: 5px;
 }
 
-#team>.person-desc {
-    -webkit-transition: all 0.6s ease;
-    transition: all 0.6s ease;
-    text-align: justify;
-    background-color: rgba(127, 127, 127, 0.4);
-    font-size: 30px;
-    margin-bottom: 40px;
-    padding: 25px;
-    border-radius: 8px;
-    color: white;
+.caption>span {
+    color: rgb(127, 127, 127);
+    font-size: 18px;
 }
 
-.person>img {
+.cover-image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -112.5px;
+    z-index: 10;
+    opacity: 0;
     height: 225px;
     width: 225px;
+    color: white;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+    .cover-image {
+        left: 53%;
+        margin-left: -112.5px;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation: landscape) {
+    .sub-typing {
+        display: none;
+    }
+    #contact {
+        height: 100% !important;
+    }
+    .contact-background-img {
+        height: 100% !important;
+    }
+}
+
+.fa-facebook,
+.fa-linkedin {
+    cursor: pointer;
+    color: rgba(138, 8, 8, 0.6) !important;
+}
+
+.fa-stack.fa-lg:hover {
+    opacity: 0.5;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.fa-stack.fa-lg {
+    color: white !important;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.person {
+    margin-bottom: 25px !important;
+}
+.person-img-container {
+    position: relative;
+    z-index: 9;
+}
+
+.person-img-container>img {
+    height: 225px;
+    width: 225px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 #games {
-    background: white;
+    background: rgba(116, 116, 116, 0.6);
+}
+
+#contact {
+    height: 60%;
 }
 
 .contact-background-img {
     position: absolute;
     background: url(../img/form.jpg) no-repeat center center fixed;
     width: 100%;
-    height: 100%;
+    height: 60%;
     background-size: cover;
     z-index: 1;
     -webkit-filter: blur(6px);
@@ -230,7 +292,7 @@ textarea {
 }
 
 .copy {
-    padding-top: 25px;
+    padding-top: 28px;
 }
 
 .img-small {

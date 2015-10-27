@@ -1,15 +1,24 @@
-<div class="content" id="team">
-    <h6 class="center-block">Team</h6>
-    <div class="row row-people">
-        <div ng-repeat="person in people" ng-click="changeSummary(person.urlName)" class="person col-sm-4 col-md-2 text-center">
-            <img ng-class="{personactive: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false" class="img-thumbnail" ng-src="../img/{{person.imgURL}}" alt="{{person.name}}">
+<div class="content container" id="team">
+    <h6 class="center-block">The Team</h6>
+    <div class="row">
+        <div ng-repeat="person in people" class="person col-xs-4 text-center">
+            <div class="person-img-container">
+                <img class="img-rounded" ng-src="../img/{{person.imgURL}}" alt="{{person.name}}">
+                <div ng-class="{personactive: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false" class="cover-image">
+                    <span ng-show="person.linkedInUrl" ng-click="windowOpen(person.linkedInUrl)" class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-linkedin fa-stack-1x"></i>
+                    </span>
+                    <span ng-show="person.facebookUrl" ng-click="windowOpen(person.facebookUrl)" class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-facebook fa-stack-1x"></i>
+                    </span>
+                </div>
+            </div>
             <div class="caption">
                 <p class="center-block">{{person.name}}</p>
+                <span ng-repeat="role in person.jobDesc">{{role}}<br></span>
             </div>
         </div>
     </div>
-    <div class="person-desc container">
-        <ui-view></ui-view>
-    </div>
-    
 </div>
