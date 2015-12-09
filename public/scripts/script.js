@@ -202,7 +202,9 @@ app.directive('contactPanel', [function() {
     return {
         // name: '',
         controller: function($http, $scope) {
+            $scope.sendFeedback = function(feedback) {
 
+            };
         },
         restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
         // template: '',
