@@ -16,18 +16,6 @@ var feedbackSchema = new Schema({
     feedback: String
 });
 
-/*userSchema.pre('save', function(next) {
-    var currentDate = new Date();
-
-    this.updated_at = currentDate;
-
-    if(!created_at) {
-        this.created_at = currentDate;
-    }
-
-    next();
-});*/
-
 var Feedback = mongoose.model('Feedback', feedbackSchema);
 module.exports = Feedback;
 
