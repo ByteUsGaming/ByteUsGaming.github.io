@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     connect: {
       options: {
         port:3000
-        
+
       },
       server: {
         options: {
@@ -33,24 +33,21 @@ module.exports = function(grunt) {
           middleware: function (connect) {
             return [
               lrSnippet,
-              mountFolder(connect, './public')
+              mountFolder(connect, './')
             ];
           }
         }
       }
     },
-    
+
     'gh-pages':{
       options: {
         base: './',
         message: 'Auto-generated commit by grunt-gh-pages'
       },
       src:[
-          './**/*.js',
-          './public/*.html',
-          './public/**/*.html',
-          './public/**/**/*.html',
-          './**/css/*.css',
+          './*/*.html',
+          './*/*.css',
           './*.js'
         ]
     },
@@ -68,21 +65,19 @@ module.exports = function(grunt) {
         nospan: true,
         livereload: LIVERELOAD_PORT
       },
-      
+
       source: {
-        files: ['./js/**/*.js'],
+        files: ['./*/*.js'],
         tasks: ['jshint']
       },
       livereload:{
         options: {
-          livereload:LIVERELOAD_PORT 
+          livereload:LIVERELOAD_PORT
         },
         files:[
-          './**/*.js',
-          './public/*.html',
-          './public/**/*.html',
-          './public/**/**/*.html',
-          './**/css/*.css',
+          './*/*.js',
+          './*/*.html',
+          './css/*.css',
           './*.js'
         ]
       }
@@ -102,7 +97,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('serve', function (target) {
     grunt.task.run([
-
       'connect:livereload',
       'open',
       'watch'
@@ -112,7 +106,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask("deploy", [
     'gh-pages'
-    
-  ]); 
+
+  ]);
 
 };

@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 app.use(bodyParser.json());
 mongoose.connect('mongodb://carl:byteuscarl@ds035683.mongolab.com:35683/byetusgaming');
 
@@ -32,10 +31,7 @@ app.post('/feedback', function(req, res) {
     });
 });
 
-app.use(express.static(__dirname + '/public'));
 
-app.get('*', function(express, res) {
-    fs.readFile(__dirname + '/public/index.html', 'utf8', function(err, text) {
-        res.send(text);
-    });
+app.get('*', function(req, res) {
+    res.send('index.html');
 });
