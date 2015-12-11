@@ -84,7 +84,7 @@ app.service('People', function() {
     }, {
         name: 'Evan Clendenning',
         urlName: 'evan',
-        linkedInUrl: '',
+        linkedInUrl: 'https://www.linkedin.com/in/evan-clendenning-85270482',
         facebookUrl: 'https://www.facebook.com/MuffinofChaos',
         jobDesc: ['Lead Programmer', 'Audio Engineer'],
         imgURL: "evan.png"
@@ -173,45 +173,80 @@ app.directive('teamPanel', [function() {
         // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}}))
     };
 }]);
+app.directive('aboutPanel', [function() {
+    // Runs during compile
+    return {
+        restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
+        controller: function($scope) {
+          $scope.items = [
+            {
+              body: "fun fun fun",
+              iconClass: "fa-cogs"
+            },
+            {
+              body: "fun fun fun",
+              iconClass: "fa-group"
+            },
+            {
+              body: "fun fun fun",
+              iconClass: "fa-heart-o"
+            }
+          ];
+        },
+        templateUrl: '../pages/about.html'
+    };
+}]);
+
 app.directive('gamesPanel', [function() {
     // Runs during compile
     return {
-        // name: '',
         restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
-        // template: '',
-        templateUrl: '../pages/games.html',
-        // replace: true,
-        // transclude: true,
-        // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}}))
+        controller: function($scope) {
+          $scope.games =
+          [
+            {
+              name: "Tusk Textventure",
+              desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+              status: "Released",
+              statusColor: "green",
+              imgUrl: "./img/game1.png"
+            },
+            {
+              name: "Giftionary",
+              desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+              status: "Development Phase",
+              statusColor: "yellow",
+              imgUrl: "./img/game4.png"
+            },
+            {
+              name: "Tusk",
+              desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+              status: "Development Phase",
+              statusColor: "yellow",
+              imgUrl: "./img/game3.png"
+            },
+            {
+              name: "Avarice",
+              desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+              status: "Design Phase",
+              statusColor: "red",
+              imgUrl: "./img/game2.png"
+            }
+          ];
+        },
+        templateUrl: '../pages/games.html'
     };
 }]);
-app.directive('storePanel', [function() {
-    // Runs during compile
-    return {
-        // name: '',
-        restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
-        // template: '',
-        templateUrl: '../pages/store.html',
-        // replace: true,
-        // transclude: true,
-        // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}}))
-    };
-}])
 app.directive('contactPanel', [function() {
     // Runs during compile
     return {
-        // name: '',
         controller: function($http, $scope) {
             $scope.sendFeedback = function(feedback) {
 
             };
         },
         restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
-        // template: '',
         templateUrl: '../pages/contact.html',
-        // replace: true,
-        // transclude: true,
-        // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}}))
     };
 }]);
 
@@ -243,11 +278,15 @@ app.service('Pages', function() {
         name: 'Team',
         url: '#team'
     }, {
+        name: 'About',
+        url: '#about'
+    },
+    {
         name: 'Games',
         url: '#games'
     }, {
         name: 'Store',
-        url: '#store'
+        url: 'https://www.zazzle.com/byteusgaming'
     }, {
         name: 'Contact',
         url: '#contact'

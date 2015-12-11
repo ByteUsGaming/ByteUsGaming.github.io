@@ -1,8 +1,10 @@
 /*global module:false*/
 var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
-var mountFolder = function (connect, dir) {
-    return connect.static(require('path').resolve(dir));
+var lrSnippet = require('connect-livereload')({
+  port: LIVERELOAD_PORT
+});
+var mountFolder = function(connect, dir) {
+  return connect.static(require('path').resolve(dir));
 };
 module.exports = function(grunt) {
 
@@ -18,19 +20,19 @@ module.exports = function(grunt) {
 
     connect: {
       options: {
-        port:3000
+        port: 3000
 
       },
       server: {
         options: {
-          port:3000,
+          port: 3000,
           // change this to '0.0.0.0' to access the server from outside
           hostname: 'localhost'
         }
       },
       livereload: {
         options: {
-          middleware: function (connect) {
+          middleware: function(connect) {
             return [
               lrSnippet,
               mountFolder(connect, './')
@@ -40,18 +42,17 @@ module.exports = function(grunt) {
       }
     },
 
-    'gh-pages':{
+    'gh-pages': {
       options: {
         base: './',
         message: 'Auto-generated commit by grunt-gh-pages'
       },
-      src:[
-          './*/*.html',
-          './*/*.css',
-          './*.js'
-        ]
+      src: [
+        './*/*.html',
+        './*/*.css',
+        './*.js'
+      ]
     },
-
 
     //Open default browser at the app
     open: {
@@ -65,18 +66,18 @@ module.exports = function(grunt) {
         nospan: true,
         livereload: LIVERELOAD_PORT
       },
-
       source: {
-        files: ['./*/*.js'],
-        tasks: ['jshint']
+        files: ['./*/*.js']
       },
-      livereload:{
+      livereload: {
         options: {
-          livereload:LIVERELOAD_PORT
+          livereload: LIVERELOAD_PORT
         },
-        files:[
+        files: [
           './*/*.js',
-          './*/*.html',
+          './**/*.html',
+          './**/**/*.html',
+          './*.html',
           './css/*.css',
           './*.js'
         ]
@@ -92,17 +93,16 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['watch']);
 
   grunt.registerTask('default', [
-        'serve'
-    ]);
+    'serve'
+  ]);
 
-  grunt.registerTask('serve', function (target) {
+  grunt.registerTask('serve', function(target) {
     grunt.task.run([
       'connect:livereload',
       'open',
       'watch'
     ]);
   });
-
 
   grunt.registerTask("deploy", [
     'gh-pages'

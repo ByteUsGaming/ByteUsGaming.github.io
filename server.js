@@ -12,6 +12,7 @@ mongoose.connect('mongodb://carl:byteuscarl@ds035683.mongolab.com:35683/byetusga
 
 var feedbackSchema = new Schema({
     name: String,
+    email: String,
     feedback: String
 });
 
