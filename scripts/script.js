@@ -80,7 +80,7 @@ app.service('People', function() {
         linkedInUrl: 'https://www.linkedin.com/in/carlamko',
         facebookUrl: 'https://www.facebook.com/itsdefnotcarl',
         jobDesc: ['Lead Programmer', 'Web Developer'],
-        imgURL: "carl.png"
+        imgURL: "carl.jpg"
     }, {
         name: 'Evan Clendenning',
         urlName: 'evan',
@@ -286,7 +286,7 @@ app.service('Pages', function() {
         url: '#games'
     }, {
         name: 'Store',
-        url: 'https://www.zazzle.com/byteusgaming'
+        url: 'http://byteusgaming.spreadshirt.com/'
     }, {
         name: 'Contact',
         url: '#contact'
