@@ -180,15 +180,15 @@ app.directive('aboutPanel', [function() {
         controller: function($scope) {
           $scope.items = [
             {
-              body: "fun fun fun",
+              body: "",
               iconClass: "fa-cogs"
             },
             {
-              body: "fun fun fun",
+              body: "",
               iconClass: "fa-group"
             },
             {
-              body: "fun fun fun",
+              body: "Developed by people who love games just as much as you do.",
               iconClass: "fa-heart-o"
             }
           ];
