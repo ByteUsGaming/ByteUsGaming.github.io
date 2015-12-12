@@ -221,8 +221,8 @@ app.directive('gamesPanel', [function() {
             {
               name: "Tusk",
               desc: "Tusk is a fast paced, top down, sci-fi shooter. You have to navigate your way through the dark corridors and difficult puzzles of an infested intergalactic prison. If you want to prove yourself as a true Scavenger of Phobus, your home planet, you'll need more than just guts to survive. Be wary of the numerous creatures that lurk in the shadows. Don't forget to collect credits  along your way. You'll need to spend them wisely on various guns and ammunitions. Just don't forget to save enough for a med pack for the boss fight. Horrific mystery and unimaginable wealth are in your future.",
-              status: "Development Phase",
-              statusColor: "yellow",
+              status: "Redesign Phase",
+              statusColor: "red",
               imgUrl: "./img/game3.png"
             },
             {
