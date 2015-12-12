@@ -123,7 +123,7 @@ h6:after {
   color: white !important;
   margin-bottom: 50px;
 }
-.fa-cogs, .fa-group, .fa-heart-o {
+.fa-lightbulb-o, .fa-group, .fa-heart-o {
   color: white;
   margin-bottom: 15px;
 }
@@ -141,6 +141,15 @@ h6:after {
 .game-container {
   position: relative;
   z-index: 9;
+}
+.stone-text {
+  font-size: 20px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.game-box {
+  margin-right: 0;
+  margin-left: 0;
 }
 .game-info {
   position: absolute;
@@ -278,7 +287,7 @@ h6:after {
   height: 100%;
 }
 #games {
-  background: white;
+  background: rgba(255,255,255,0.7);
 }
 #games>*>h6 {
   color: #2B2B2B !important;
@@ -306,6 +315,11 @@ h6:after {
   transition: all 0.5s linear;
 }
 .hoverbox {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.hoverbox>.stone-text {
+  color: white !important;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }

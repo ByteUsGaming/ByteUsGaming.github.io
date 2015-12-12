@@ -180,11 +180,11 @@ app.directive('aboutPanel', [function() {
         controller: function($scope) {
           $scope.items = [
             {
-              body: "",
-              iconClass: "fa-cogs"
+              body: "Creative ideas to engage the gaming tastes of many.",
+              iconClass: "fa-lightbulb-o"
             },
             {
-              body: "",
+              body: "Community-driven environment spurs new ideas and changes old ones.",
               iconClass: "fa-group"
             },
             {
@@ -206,7 +206,7 @@ app.directive('gamesPanel', [function() {
           [
             {
               name: "Tusk Textventure",
-              desc: "The Tusk-Textventure is an interactive, forge your own path ebook. You play the role of \"Kay Surlaw,\" a Scavenger from the planet Phobus. Her unyielding desire for profit and adventure leads her on a journey to Tusk, an intergalactic prison that was ripped violently through a wormhole. She could never have anticipated what she would find on this dilapidated compound. Now her fate is in your hands, so tread lightly as any decision may well be your last.",
+              desc: "The Tusk-Textventure is an interactive, forge your own path ebook. You play the role of \"Kay Surlaw\" - a Scavenger from the planet Phobus. Her unyielding desire for profit and adventure leads her on a journey to Tusk, an intergalactic prison that was ripped violently through a wormhole. She could never have anticipated what she would find on the other side. Great danger and wealth lie before you. Are you up for the challenge?",
               status: "Released",
               statusColor: "green",
               imgUrl: "./img/game1.png"
