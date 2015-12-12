@@ -97,7 +97,7 @@ a, a:hover, a:visited, a:active, a:link {
 }
 #intro>.sub-typing {
   opacity: 0.0;
-  color: white;
+  color: rgb(200, 200, 200);
   font-size: 66px;
   -webkit-transition: all 1.0s ease;
   transition: all 1.0s ease;
