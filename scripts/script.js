@@ -180,12 +180,12 @@ app.directive('aboutPanel', [function() {
         controller: function($scope) {
           $scope.items = [
             {
-              body: "Creative ideas to engage the gaming tastes of many.",
-              iconClass: "fa-lightbulb-o"
+              body: "A variety of gaming options to cater to all preferences.",
+              iconClass: "fa-group"
             },
             {
               body: "Community-driven environment spurs new ideas and changes old ones.",
-              iconClass: "fa-group"
+              iconClass: "fa-comments"
             },
             {
               body: "Developed by people who love games just as much as you do.",
