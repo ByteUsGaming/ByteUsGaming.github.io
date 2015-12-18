@@ -191,7 +191,12 @@ h6:after {
   transition: all 0.2s linear;
 }
 .desc-block {
-  font-size: 25px !important;
+  font-size: 20px !important;
+  text-align: justify;
+  -webkit-transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  transform: translateY(-60px);
+  padding: 10px;
   opacity: 0;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -230,6 +235,13 @@ h6:after {
   .cover-image {
     left: 53%;
     margin-left: -112.5px;
+  }
+  .game-info>.center-block {
+    font-size: 30px;
+  }
+  .desc-block {
+    margin-top: -20px !important;
+    font-size: 18px !important;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation: landscape) {
@@ -354,7 +366,7 @@ textarea {
 #FooterMenu {
   background-color: #2B2B2B;
   color: #5B6073;
-  font-size: 1vw !important;
+  font-size: 1.3vw !important;
   text-shadow: 1px 1px 5px black;
 }
 #FooterMenu > * {

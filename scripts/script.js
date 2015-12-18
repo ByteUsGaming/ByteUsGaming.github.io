@@ -3,74 +3,6 @@ var app = angular.module('ByteMe', ['ui.router', 'ngAnimate']);
 app.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
-
-        //$stateProvider
-        // .state('home', {
-        //     url: '/',
-        //     templateUrl: '../pages/intro.html',
-        //     controller: function($scope, $http) {
-        //         $(".typing").typed({
-        //             strings: [
-        //                 "innovative.^1000",
-        //                 "dedicated.^1000",
-        //                 "developers.^1000",
-        //                 "artists.^1000",
-        //                 "designers.^1000",
-        //                 "ByteUsGaming.^1000"
-        //             ],
-        //             typeSpeed: 40,
-        //             showCursor: true,
-        //             callback: function() {
-        //                 $(".sub-typing").css("opacity", "1.0");
-        //                 $("#logo").css("opacity", "1.0");
-        //             }
-        //         });
-
-        //     }
-        // })
-        // .state('team', {
-        //     url: '/team',
-        //     templateUrl: '../pages/team.html'
-        // })
-        // .state('carl', {
-        //     url: '/carl',
-        //     templateUrl: '../pages/people/carl.html'
-        // })
-        // .state('evan', {
-        //     url: '/evan',
-        //     templateUrl: '../pages/people/evan.html'
-        // })
-        // .state('kevin', {
-        //     url: '/kevin',
-        //     templateUrl: '../pages/people/kevin.html'
-        // })
-        // .state('sarah', {
-        //     url: '/sarah',
-        //     templateUrl: '../pages/people/sarah.html'
-        // })
-        // .state('spencer', {
-        //     url: '/spencer',
-        //     templateUrl: '../pages/people/spencer.html'
-        // })
-        // .state('tabitha', {
-        //     url: '/tabitha',
-        //     templateUrl: '../pages/people/tabitha.html'
-        // })
-        // .state('games', {
-        //     url: '/games',
-        //     templateUrl: '../pages/games.html'
-        // })
-        // .state('store', {
-        //     url: '/store',
-        //     templateUrl: '../pages/store.html'
-        // })
-        // .state('contact', {
-        //     url: '/contactus',
-        //     templateUrl: '../pages/contact.html',
-        //     controller : function($http, $scope) {
-
-        //     }
-        // });
     }
 ]);
 
@@ -86,7 +18,7 @@ app.service('People', function() {
         urlName: 'evan',
         linkedInUrl: 'https://www.linkedin.com/in/evan-clendenning-85270482',
         facebookUrl: 'https://www.facebook.com/MuffinofChaos',
-        jobDesc: ['Lead Programmer', 'Audio Engineer'],
+        jobDesc: ['Lead Programmer', 'Game Designer'],
         imgURL: "evan.png"
     }, {
         name: 'Kevin Portuondo',
@@ -107,7 +39,7 @@ app.service('People', function() {
         urlName: 'spencer',
         linkedInUrl: '',
         facebookUrl: 'https://www.facebook.com/spencer.maschin.7',
-        jobDesc: ['Concept Artist', 'Quality Assurance Analyst'],
+        jobDesc: ['Concept Artist', 'Game Programmer'],
         imgURL: "spencer.png"
     }, {
         name: 'Tabitha Kitchen',
@@ -123,10 +55,6 @@ app.service('People', function() {
 app.directive('introPanel', [function() {
     // Runs during compile
     return {
-        // name: '',
-        // priority: 1,
-        // terminal: true,
-        // scope: {}, // {} = isolate, true = child, false/undefined = no change
         controller: function($scope, $http) {
             $(".typing").typed({
                 strings: [
@@ -148,10 +76,7 @@ app.directive('introPanel', [function() {
         },
         restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
         // template: '',
-        templateUrl: '../pages/intro.html',
-        // replace: true,
-        // transclude: true,
-        // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}}))
+        templateUrl: '../pages/intro.html'
     };
 }]);
 app.directive('teamPanel', [function() {
@@ -167,10 +92,7 @@ app.directive('teamPanel', [function() {
         },
         restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
         // template: '',
-        templateUrl: '../pages/team.html',
-        // replace: true,
-        // transclude: true,
-        // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}}))
+        templateUrl: '../pages/team.html'
     };
 }]);
 app.directive('aboutPanel', [function() {
@@ -216,19 +138,19 @@ app.directive('gamesPanel', [function() {
               desc: "Giftionary is a party-like, web-app game in which you attempt to play the best GIF that matches the randomly selected category. If most people vote for your GIF, you are the winner of the round! Once everyone votes, a winner is declared and the next round begins. Set a score limit or play as much as you want!",
               status: "Development Phase",
               statusColor: "yellow",
-              imgUrl: "./img/game4.png"
+              imgUrl: "./img/coming_soon.png"
             },
-            {
-              name: "Tusk",
-              desc: "Tusk is a fast paced, top down, sci-fi shooter. You have to navigate your way through the dark corridors and difficult puzzles of an infested intergalactic prison. If you want to prove yourself as a true Scavenger of Phobus, your home planet, you'll need more than just guts to survive. Be wary of the numerous creatures that lurk in the shadows. Don't forget to collect credits  along your way. You'll need to spend them wisely on various guns and ammunitions. Just don't forget to save enough for a med pack for the boss fight. Horrific mystery and unimaginable wealth are in your future.",
-              status: "Redesign Phase",
-              statusColor: "red",
-              imgUrl: "./img/game3.png"
-            },
+            // {
+            //   name: "TBD",
+            //   desc: "Tusk is a fast paced, top down, sci-fi shooter. You have to navigate your way through the dark corridors and difficult puzzles of an infested intergalactic prison. If you want to prove yourself as a true Scavenger of Phobus, your home planet, you'll need more than just guts to survive. Be wary of the numerous creatures that lurk in the shadows. Don't forget to collect credits  along your way. You'll need to spend them wisely on various guns and ammunitions. Just don't forget to save enough for a med pack for the boss fight. Horrific mystery and unimaginable wealth are in your future.",
+            //   status: "Redesign Phase",
+            //   statusColor: "red",
+            //   imgUrl: "./img/game3.png"
+            // },
             {
               name: "Avarice",
               desc: "Avarice: The Curse of Greed is a dungeon crawler board game. Each player selects the role of an elemental dragon (Fire, Water, Earth or Air) whose sole purpose is to hoard as much gold as possible. How do you get all this gold, you ask? By killing all the villagers, magicians, and warriors that stand in your way of course! Just don't forget, the more gold you amass, the bigger a target you become towards the other Dragons. Only the best strategist will succeed!",
-              status: "Design Phase",
+              status: "Postponed",
               statusColor: "red",
               imgUrl: "./img/game2.png"
             }
